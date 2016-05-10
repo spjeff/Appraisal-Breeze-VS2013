@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Appraisal</title>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/q.js"></script>
+    <script src="Scripts/jquery-1.6.3.js"></script>
+
+    <script src="Scripts/breeze.min.js"></script>
+    <script src="Scripts/breeze.directives.js"></script>
+    <script src="Scripts/breeze.bridge.angular.js"></script>
+
+    <script src="JavaScript1.js"></script>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div ng-app="appraisalApp">
+        <div ng-controller="appraisalCtl">
+
+            <h1>Appraisal</h1>
+            {{test}}
+            {{property.length}}
+            <hr />
+
+            <!-- property -->
+            <table>
+                <tr ng-repeat="p in property">
+                    <td class="delete"><input type="button" value="Delete" ng-click="delete(p)" /></td>
+                    <td class="card">
+
+                        <!-- Appraisal -->
+                        <table class="detail">
+                            <tr>
+                                <td>{{p.ID}}</td>
+                                <td>
+                                    <input ng-model="p.Street" />
+                                </td>
+                                <td>{{p.City}}</td>
+                                <td>{{p.LoanOfficer}}</td>
+                                <td>{{p.FormStatus}}</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <hr />
+            <input type="button" ng-click="refresh()" value="Refresh" />
+            <input type="button" ng-click="add()" value="Add" />
+            <input type="button" ng-click="save()" value="Save" />
+
+        </div>
+    </div>
+
+</body>
+</html>

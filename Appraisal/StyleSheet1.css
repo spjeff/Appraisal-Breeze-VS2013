@@ -1,0 +1,9 @@
+﻿.delete {
+    vertical-align:top;
+}.card {
+    padding-bottom:20px;
+}
+.detail {
+    background-color:lightblue;
+    border:solid 1px;
+}
